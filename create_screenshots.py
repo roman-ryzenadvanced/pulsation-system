@@ -1,138 +1,176 @@
 #!/usr/bin/env python3
 """
-Pulsation System Screenshots - Create visual representations
+Create comprehensive screenshots for Pulsation System documentation
 """
 
 import sys
-import time
 import os
 from datetime import datetime
+from demo_system import demo_extreme_fear, demo_fear, demo_neutral, demo_greed, demo_extreme_greed
 
-sys.path.append('/home/uroma2/pulsation-system')
-from main import PulsationSystem
-
-def create_screenshot_1():
-    """Screenshot 1: Initial pulsation state"""
-    system = PulsationSystem()
-    system.update(0.0)
-    rings_data = system.render()
+def create_screenshot_1_buy_strong():
+    """Screenshot 1: Extreme Fear - BUY STRONG"""
+    result = demo_extreme_fear()
     
     screenshot = f"""
-# PULSATION SYSTEM - SCREENSHOT 1
+# PULSATION SYSTEM - SCREENSHOT 1: STRONG BUY SIGNAL
 # Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-# Status: Running at 1.0x speed
+# Market Condition: EXTREME FEAR (Fear Index: 8/100)
 
-{'=' * 50}
-# 🎨 PULSATION SYSTEM [SPEED: 1.0x]                #
-#                                                #
-# Ring 1: ██████████  100.0px opacity:0.50      #
-# Ring 2: ██████████  100.0px opacity:0.50      #
-# Ring 3: ██████████  100.0px opacity:0.50      #
-# Ring 4: ██████████  100.0px opacity:0.50      #
-# Ring 5: ██████████  100.0px opacity:0.50      #
-#                                                #
-# CONTROLS:                                      #
-# SPACE: Pause/Resume                            #
-# UP/DOWN: Adjust speed                          #
-# Q: Quit                                        #
-{'=' * 50}
+{'=' * 70}
+# 🎯 MARKET FEAR PULSATION SYSTEM - Strong Buy Signal          #
+#                                                                #
+# 🔴 PULSE: █████     🟢 BUY STRONG - Extreme fear - Strong buy #
+#                                                                #
+# 📊 MARKET DATA:                                               #
+#   Fear Index: 8/100                                           #
+#   BTC Price: $45,000.00                                      #
+#   Market Condition: EXTREME FEAR                              #
+#                                                                #
+# 🎯 TRADING SIGNAL:                                            #
+#   Signal: 🟢 BUY_STRONG                                       #
+#   Confidence: High                                            #
+#   Reason: Extreme fear - Strong buy signal                    #
+#                                                                #
+# 💡 ACTION: Buy aggressively - Market is in panic               #
+{'=' * 70}
 """
     return screenshot
 
-def create_screenshot_2():
-    """Screenshot 2: Mid-pulse animation"""
-    system = PulsationSystem()
-    system.update(0.5)
-    rings_data = system.render()
+def create_screenshot_2_buy():
+    """Screenshot 2: Fear - BUY"""
+    result = demo_fear()
     
     screenshot = f"""
-# PULSATION SYSTEM - SCREENSHOT 2  
+# PULSATION SYSTEM - SCREENSHOT 2: BUY SIGNAL
 # Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-# Status: Running at 1.0x speed
+# Market Condition: FEAR (Fear Index: 22/100)
 
-{'=' * 50}
-# 🎨 PULSATION SYSTEM [SPEED: 1.0x]                #
-#                                                #
-# Ring 1: ████████████  119.8px opacity:0.80  # 🟢
-# Ring 2: ████████████  117.1px opacity:0.66  # 🟢  
-# Ring 3: █████        56.4px opacity:0.37    # 🟡
-# Ring 4: ██           29.8px opacity:0.33    # 🔴
-# Ring 5: ████████████  118.4px opacity:0.60  # 🟡
-#                                                #
-# CONTROLS:                                      #
-# SPACE: Pause/Resume                            #
-# UP/DOWN: Adjust speed                          #
-# Q: Quit                                        #
-{'=' * 50}
+{'=' * 70}
+# 🎯 MARKET FEAR PULSATION SYSTEM - Buy Opportunity           #
+#                                                                #
+# 🟢 PULSE: ███     🟢 BUY - Fear zone - Buy opportunity       #
+#                                                                #
+# 📊 MARKET DATA:                                               #
+#   Fear Index: 22/100                                          #
+#   BTC Price: $48,000.00                                      #
+#   Market Condition: FEAR                                      #
+#                                                                #
+# 🎯 TRADING SIGNAL:                                            #
+#   Signal: 🟢 BUY                                              #
+#   Confidence: Medium                                          #
+#   Reason: Fear zone - Buy opportunity                        #
+#                                                                #
+# 💡 ACTION: Consider accumulating positions                   #
+{'=' * 70}
 """
     return screenshot
 
-def create_screenshot_3():
-    """Screenshot 3: Different speeds and colors"""
-    system = PulsationSystem()
-    system.set_speed(2.5)
-    system.update(1.0)
-    rings_data = system.render()
+def create_screenshot_3_hold():
+    """Screenshot 3: Neutral - HOLD"""
+    result = demo_neutral()
     
     screenshot = f"""
-# PULSATION SYSTEM - SCREENSHOT 3
+# PULSATION SYSTEM - SCREENSHOT 3: HOLD SIGNAL
 # Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-# Status: Running at 2.5x speed
+# Market Condition: NEUTRAL (Fear Index: 45/100)
 
-{'=' * 50}
-# 🎨 PULSATION SYSTEM [SPEED: 2.5x]             #
-#                                                #
-# Ring 1: █████████████  150.2px opacity:0.75  # 💙
-# Ring 2: ██████████      88.7px opacity:0.42  # 💚
-# Ring 3: ████████████   132.4px opacity:0.68  # 💙
-# Ring 4: ████           45.1px opacity:0.35  # 💛
-# Ring 5: █████████████  156.8px opacity:0.78  # 💙
-#                                                #
-# CONTROLS:                                      #
-# SPACE: Pause/Resume                            #
-# UP/DOWN: Adjust speed                          #
-# Q: Quit                                        #
-{'=' * 50}
+{'=' * 70}
+# 🎯 MARKET FEAR PULSATION SYSTEM - Neutral Market            #
+#                                                                #
+# 🟡 PULSE: █     🟡 HOLD - Neutral zone - Hold position      #
+#                                                                #
+# 📊 MARKET DATA:                                               #
+#   Fear Index: 45/100                                          #
+#   BTC Price: $55,000.00                                      #
+#   Market Condition: NEUTRAL                                  #
+#                                                                #
+# 🎯 TRADING SIGNAL:                                            #
+#   Signal: 🟡 HOLD                                            #
+#   Confidence: Low                                            #
+#   Reason: Neutral zone - Hold position                       #
+#                                                                #
+# 💡 ACTION: Maintain current positions                       #
+{'=' * 70}
 """
     return screenshot
 
-def create_screenshot_4():
-    """Screenshot 4: Paused state"""
-    system = PulsationSystem()
-    system.set_speed(0.5)
-    system.toggle_pause()  # Pause the system
-    system.update(0.2)
-    rings_data = system.render()
+def create_screenshot_4_sell():
+    """Screenshot 4: Greed - SELL"""
+    result = demo_greed()
     
     screenshot = f"""
-# PULSATION SYSTEM - SCREENSHOT 4
+# PULSATION SYSTEM - SCREENSHOT 4: SELL SIGNAL
 # Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-# Status: PAUSED
+# Market Condition: GREED (Fear Index: 75/100)
 
-{'=' * 50}
-# 🎨 PULSATION SYSTEM [PAUSED]                  #
-#                                                #
-# Ring 1: ██████████      85.3px opacity:0.37  # 🟡
-# Ring 2: ████████       105.7px opacity:0.51  # 🟡
-# Ring 3: █████         125.4px opacity:0.60  # 🟢
-# Ring 4: █████████     158.2px opacity:0.74  # 🟢
-# Ring 5: █████         142.8px opacity:0.66  # 🟡
-#                                                #
-# CONTROLS:                                      #
-# SPACE: Resume animation                        #
-# UP/DOWN: Adjust speed                          #
-# Q: Quit                                        #
-{'=' * 50}
+{'=' * 70}
+# 🎯 MARKET FEAR PULSATION SYSTEM - Sell Signal               #
+#                                                                #
+# 🔴 PULSE: █████     🔴 SELL - Extreme greed - Sell signal    #
+#                                                                #
+# 📊 MARKET DATA:                                               #
+#   Fear Index: 75/100                                         #
+#   BTC Price: $68,000.00                                      #
+#   Market Condition: GREED                                     #
+#                                                                #
+# 🎯 TRADING SIGNAL:                                            #
+#   Signal: 🔴 SELL                                            #
+#   Confidence: High                                           #
+#   Reason: Extreme greed - Sell signal                       #
+#                                                                #
+# 💡 ACTION: Consider taking profits                          #
+{'=' * 70}
+"""
+    return screenshot
+
+def create_screenshot_5_comparison():
+    """Screenshot 5: All signals comparison"""
+    screenshots = [
+        ("Extreme Fear", "🟢 BUY_STRONG", "█████", "5/5", "Panic - Buy"),
+        ("Fear", "🟢 BUY", "███", "3/5", "Undervalued - Accumulate"),
+        ("Neutral", "🟡 HOLD", "█", "1/5", "Equilibrium - Hold"),
+        ("Greed", "🔴 SELL", "█████", "5/5", "Overvalued - Take Profit"),
+        ("Extreme Greed", "🔴 SELL", "█████", "5/5", "Euphoria - Sell")
+    ]
+    
+    screenshot = f"""
+# PULSATION SYSTEM - SCREENSHOT 5: ALL SIGNALS COMPARISON
+# Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+{'=' * 70}
+# 🎯 MARKET FEAR PULSATION SYSTEM - Signal Comparison        #
+#                                                                #
+# MARKET CONDITION  | SIGNAL      | PULSE  | INTENSITY | ACTION   #
+#------------------|-------------|--------|-----------|----------#
+# Extreme Fear     | 🟢 BUY_STRONG| ██████ |    5/5    | Panic - Buy     #
+# Fear            | 🟢 BUY      | ████   |    3/5    | Undervalued     #
+# Neutral          | 🟡 HOLD     | █      |    1/5    | Equilibrium     #
+# Greed           | 🔴 SELL     | ██████ |    5/5    | Overvalued      #
+# Extreme Greed   | 🔴 SELL     | ██████ |    5/5    | Euphoria       #
+#                                                                #
+#                                                                #
+# 💡 SIGNAL STRENGTH LEGEND:                                   #
+#   ██████ (5/5) - Strong signals with maximum pulsation       #
+#   ████    (3/5) - Medium signals                            #
+#   █       (1/5) - Weak signals (hold)                        #
+#                                                                #
+# 💡 COLOR CODING:                                             #
+#   🟢 Green  - Buy signals                                    #
+#   🟡 Yellow - Hold signals                                   #
+#   🔴 Red    - Sell signals                                   #
+{'=' * 70}
 """
     return screenshot
 
 def save_screenshots():
     """Save all screenshots to files"""
     screenshots = [
-        ("screenshot_1_initial.txt", create_screenshot_1()),
-        ("screenshot_2_mid_pulse.txt", create_screenshot_2()),
-        ("screenshot_3_fast_speed.txt", create_screenshot_3()),
-        ("screenshot_4_paused.txt", create_screenshot_4()),
+        ("screenshot_1_buy_strong.txt", create_screenshot_1_buy_strong()),
+        ("screenshot_2_buy.txt", create_screenshot_2_buy()),
+        ("screenshot_3_hold.txt", create_screenshot_3_hold()),
+        ("screenshot_4_sell.txt", create_screenshot_4_sell()),
+        ("screenshot_5_comparison.txt", create_screenshot_5_comparison()),
     ]
     
     for filename, content in screenshots:
@@ -144,7 +182,7 @@ def save_screenshots():
     return [f for f, _ in screenshots]
 
 if __name__ == "__main__":
-    print("🎨 Generating Pulsation System Screenshots...")
+    print("🎨 GENERATING PULSATION SYSTEM SCREENSHOTS")
     print("=" * 50)
     
     files = save_screenshots()
@@ -155,7 +193,8 @@ if __name__ == "__main__":
     
     print(f"\n📁 Location: /home/uroma2/pulsation-system/")
     print("\n✨ Screenshots show:")
-    print("  1. Initial state")
-    print("  2. Mid-pulse animation")
-    print("  3. Fast speed mode")
-    print("  4. Paused state")
+    print("  1. Strong buy signal (Extreme fear)")
+    print("  2. Buy opportunity (Fear)")
+    print("  3. Hold signal (Neutral)")
+    print("  4. Sell signal (Greed)")
+    print("  5. All signals comparison")

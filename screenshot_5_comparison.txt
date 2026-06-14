@@ -1,0 +1,26 @@
+
+# PULSATION SYSTEM - SCREENSHOT 5: ALL SIGNALS COMPARISON
+# Generated: 2026-06-14 12:10:22
+
+======================================================================
+# 🎯 MARKET FEAR PULSATION SYSTEM - Signal Comparison        #
+#                                                                #
+# MARKET CONDITION  | SIGNAL      | PULSE  | INTENSITY | ACTION   #
+#------------------|-------------|--------|-----------|----------#
+# Extreme Fear     | 🟢 BUY_STRONG| ██████ |    5/5    | Panic - Buy     #
+# Fear            | 🟢 BUY      | ████   |    3/5    | Undervalued     #
+# Neutral          | 🟡 HOLD     | █      |    1/5    | Equilibrium     #
+# Greed           | 🔴 SELL     | ██████ |    5/5    | Overvalued      #
+# Extreme Greed   | 🔴 SELL     | ██████ |    5/5    | Euphoria       #
+#                                                                #
+#                                                                #
+# 💡 SIGNAL STRENGTH LEGEND:                                   #
+#   ██████ (5/5) - Strong signals with maximum pulsation       #
+#   ████    (3/5) - Medium signals                            #
+#   █       (1/5) - Weak signals (hold)                        #
+#                                                                #
+# 💡 COLOR CODING:                                             #
+#   🟢 Green  - Buy signals                                    #
+#   🟡 Yellow - Hold signals                                   #
+#   🔴 Red    - Sell signals                                   #
+======================================================================
