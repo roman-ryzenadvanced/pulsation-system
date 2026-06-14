@@ -1,0 +1,19 @@
+
+# PULSATION SYSTEM - SCREENSHOT 2  
+# Generated: 2026-06-14 11:35:15
+# Status: Running at 1.0x speed
+
+==================================================
+# 🎨 PULSATION SYSTEM [SPEED: 1.0x]                #
+#                                                #
+# Ring 1: ████████████  119.8px opacity:0.80  # 🟢
+# Ring 2: ████████████  117.1px opacity:0.66  # 🟢  
+# Ring 3: █████        56.4px opacity:0.37    # 🟡
+# Ring 4: ██           29.8px opacity:0.33    # 🔴
+# Ring 5: ████████████  118.4px opacity:0.60  # 🟡
+#                                                #
+# CONTROLS:                                      #
+# SPACE: Pause/Resume                            #
+# UP/DOWN: Adjust speed                          #
+# Q: Quit                                        #
+==================================================
